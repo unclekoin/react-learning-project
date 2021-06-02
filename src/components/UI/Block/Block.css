@@ -1,0 +1,11 @@
+.block {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f1f2f6;
+    border-radius: 1rem;
+}
+
+.block:not(:last-child) {
+    margin-bottom: 3rem;
+}

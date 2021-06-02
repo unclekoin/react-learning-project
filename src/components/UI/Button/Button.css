@@ -1,0 +1,23 @@
+.button {
+    padding: 0.5rem 2rem;
+    font-size: 1.4rem;
+    align-self: flex-start;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    background-color: #5352ed;
+    border:1px solid #5352ed;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s linear;
+}
+
+.button:hover {
+    color: #5352ed;
+    background-color: #ffffff;
+}
+
+.button:active {
+    transform: scale(0.98);
+}

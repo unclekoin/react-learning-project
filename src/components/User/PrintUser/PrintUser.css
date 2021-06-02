@@ -1,0 +1,8 @@
+.print-user {
+    padding: 0.5rem 1rem;
+    border: 1px solid #747d8c;
+}
+
+.print-user p {
+    font-size: 1.6rem;
+}

@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import AddUser from "./components/User/AddUser/AddUser";
+import PrintUser from "./components/User/PrintUser/PrintUser";
+import "./App.css";
 
-function App() {
+const App = () => {
+
+  const [userData, setUserData] = useState([])
+
+  const updateUserData = (name, age) => {
+    setUserData(prevData => {
+      const newUserData = [...prevData];
+      newUserData.unshift({name, age});
+      return newUserData;
+    })
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <AddUser onUserData={ updateUserData } />
+      <PrintUser userData={ userData } />
     </div>
-  );
+  )
 }
 
 export default App;
