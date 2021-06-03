@@ -9,9 +9,19 @@ const AddUser = ( props ) => {
 
   const getUserDataHandler = (e) => {
     e.preventDefault();
-    props.onUserData(userName, userAge)
-    setUserName('');
-    setUserAge('');
+
+    if (!userName.trim() || !userAge.trim()) {
+      console.log('Empty value!')
+    } else if (isNaN(+userAge)) {
+      console.log('Age must be a number!')
+    } else if( +userAge < 0 || +userAge > 100) {
+      console.log('Age must be a positive number or less 100!')
+    } else {
+      props.onUserData(userName, userAge)
+      console.log(userName, userAge)
+      setUserName('');
+      setUserAge('');
+    }
   }
 
   const getUserNameHandler = (e) => {

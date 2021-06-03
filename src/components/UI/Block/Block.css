@@ -9,3 +9,7 @@
 .block:not(:last-child) {
     margin-bottom: 3rem;
 }
+
+.block__modal {
+    padding-top: 0;
+}
