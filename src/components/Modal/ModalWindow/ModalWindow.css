@@ -1,4 +1,5 @@
 .modal-window {
+    display: none;
     position: absolute;
     top: 30%;
     left: 50%;
@@ -33,7 +34,12 @@
 }
 
 .modal-window p {
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
     font-size: 1.6rem;
     letter-spacing: 1px;
+}
+
+.app.open .modal-window,
+.app.open .modal-overlay {
+    display: block;
 }

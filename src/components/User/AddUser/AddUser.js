@@ -11,14 +11,17 @@ const AddUser = ( props ) => {
     e.preventDefault();
 
     if (!userName.trim() || !userAge.trim()) {
-      console.log('Empty value!')
+      props.onModalWindowHandler('Empty data!');
+      setUserAge('');
     } else if (isNaN(+userAge)) {
-      console.log('Age must be a number!')
+      props.onModalWindowHandler('Age must be a number!');
+      setUserAge('');
     } else if( +userAge < 0 || +userAge > 100) {
-      console.log('Age must be a positive number or less 100!')
+      props.onModalWindowHandler('Age must be a positive number or less 100!');
+      setUserAge('');
     } else {
       props.onUserData(userName, userAge)
-      console.log(userName, userAge)
+      props.onModalWindowHandler()
       setUserName('');
       setUserAge('');
     }

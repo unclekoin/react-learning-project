@@ -1,14 +1,15 @@
 import React from "react";
 import "./ModalWindow.css";
 
-const ModalWindow = () => {
+const ModalWindow = (props) => {
+  const closeModalWindow = () => props.onModalWindowHandler();
   return (
     <div className="modal-window">
       <div className="modal-window__header">
         <h2>Notice</h2>
-        <span>&times;</span>
+        <span onClick={ closeModalWindow }>&times;</span>
       </div>
-        <p>Age must be a positive number or less 100!</p>
+        <p>{ props.msg }</p>
     </div>
   )
 }
